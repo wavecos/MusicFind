@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 import AVFoundation
 import JGProgressHUD
+import RealmSwift
 
 class DetailSongViewController: UIViewController {
 
@@ -22,6 +23,7 @@ class DetailSongViewController: UIViewController {
   var audioPlayer : AVAudioPlayer?
 
   let hud = JGProgressHUD(style: .Dark)
+  let realm = try! Realm()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -66,6 +68,17 @@ class DetailSongViewController: UIViewController {
 
   @IBAction func favoriteAction(sender: AnyObject) {
     debugPrint("boton favorito presionado")
+
+    if let song = song {
+      try! realm.write {
+        realm.add(song, update: true)
+      }
+
+      let message = UIAlertController(title: "MusicFind", message: "Adicionaste esta cancion a tus favoritos...", preferredStyle: .Alert)
+      message.addAction(UIAlertAction(title: "Oki Dokie!", style: UIAlertActionStyle.Cancel, handler: nil))
+      presentViewController(message, animated: true, completion: nil)
+    }
+
   }
 
 
