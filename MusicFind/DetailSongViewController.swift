@@ -32,6 +32,7 @@ class DetailSongViewController: UIViewController {
       artistLabel.text = song.artistName
       songLabel.text = song.songName
       let imageUrl = NSURL(string: song.imageUrl)
+      coverImageView.layer.cornerRadius = 10
       coverImageView.sd_setImageWithURL(imageUrl, placeholderImage: nil)
     }
   }

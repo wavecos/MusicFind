@@ -10,11 +10,17 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SDWebImage
+import JGProgressHUD
 
 class ListSongViewController: UITableViewController {
 
+  @IBOutlet weak var searchTextField: UITextField!
+  @IBOutlet weak var searchButton: UIButton!
+
   var songs = [Song]()
   var songSelected: Song?
+
+  let hud = JGProgressHUD(style: .Dark)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,6 +40,9 @@ class ListSongViewController: UITableViewController {
   // MARK: - Consumir el API para obtener las canciones
 
   func getSongs() {
+
+    hud.showInView(self.view)
+
     Alamofire.request(.GET, "https://itunes.apple.com/search?term=beatles&entity=song&limit=20", parameters: nil)
       .responseJSON { response in
 
@@ -49,6 +58,7 @@ class ListSongViewController: UITableViewController {
           self.showAlertMessage(response.result.error!.localizedDescription)
         }
 
+        self.hud.dismiss()
       }
   }
 
