@@ -14,6 +14,7 @@
 		0461CC111C4212C2002A7F70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0461CC0F1C4212C2002A7F70 /* LaunchScreen.storyboard */; };
 		0461CC1C1C4212C2002A7F70 /* MusicFindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461CC1B1C4212C2002A7F70 /* MusicFindTests.swift */; };
 		0461CC271C4212C2002A7F70 /* MusicFindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461CC261C4212C2002A7F70 /* MusicFindUITests.swift */; };
+		0F978261F6DB187E89999353 /* Pods_MusicFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B47270824F61A3054B97BD /* Pods_MusicFind.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		0461CC221C4212C2002A7F70 /* MusicFindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicFindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0461CC261C4212C2002A7F70 /* MusicFindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFindUITests.swift; sourceTree = "<group>"; };
 		0461CC281C4212C2002A7F70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A2EA3F5E0E49C769168A127 /* Pods-MusicFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicFind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicFind/Pods-MusicFind.release.xcconfig"; sourceTree = "<group>"; };
+		D9B47270824F61A3054B97BD /* Pods_MusicFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E29D090400383D114D4A7D6E /* Pods-MusicFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicFind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicFind/Pods-MusicFind.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F978261F6DB187E89999353 /* Pods_MusicFind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				0461CC1A1C4212C2002A7F70 /* MusicFindTests */,
 				0461CC251C4212C2002A7F70 /* MusicFindUITests */,
 				0461CC041C4212C2002A7F70 /* Products */,
+				5EA78CEC05A5FD6E24A02A69 /* Pods */,
+				33E7110E4CBE47280D803084 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = MusicFindUITests;
 			sourceTree = "<group>";
 		};
+		33E7110E4CBE47280D803084 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9B47270824F61A3054B97BD /* Pods_MusicFind.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5EA78CEC05A5FD6E24A02A69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E29D090400383D114D4A7D6E /* Pods-MusicFind.debug.xcconfig */,
+				7A2EA3F5E0E49C769168A127 /* Pods-MusicFind.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0461CC2B1C4212C2002A7F70 /* Build configuration list for PBXNativeTarget "MusicFind" */;
 			buildPhases = (
+				E74D93E0A7E07224DC1D8022 /* Check Pods Manifest.lock */,
 				0461CBFF1C4212C2002A7F70 /* Sources */,
 				0461CC001C4212C2002A7F70 /* Frameworks */,
 				0461CC011C4212C2002A7F70 /* Resources */,
+				47171A4CE25D74E275D43406 /* Embed Pods Frameworks */,
+				4C8E00D03A09D6CEC29618FE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47171A4CE25D74E275D43406 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicFind/Pods-MusicFind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C8E00D03A09D6CEC29618FE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicFind/Pods-MusicFind-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E74D93E0A7E07224DC1D8022 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0461CBFF1C4212C2002A7F70 /* Sources */ = {
@@ -397,6 +472,7 @@
 		};
 		0461CC2C1C4212C2002A7F70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E29D090400383D114D4A7D6E /* Pods-MusicFind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MusicFind/Info.plist;
@@ -408,6 +484,7 @@
 		};
 		0461CC2D1C4212C2002A7F70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A2EA3F5E0E49C769168A127 /* Pods-MusicFind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MusicFind/Info.plist;
@@ -484,6 +561,7 @@
 				0461CC2D1C4212C2002A7F70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0461CC2E1C4212C2002A7F70 /* Build configuration list for PBXNativeTarget "MusicFindTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +570,7 @@
 				0461CC301C4212C2002A7F70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0461CC311C4212C2002A7F70 /* Build configuration list for PBXNativeTarget "MusicFindUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +579,7 @@
 				0461CC331C4212C2002A7F70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
