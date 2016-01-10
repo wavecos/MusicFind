@@ -75,7 +75,11 @@ class ListSongViewController: UITableViewController {
 
     let song = self.songs[indexPath.row]
     // Configure the cell...
+    cell.songLabel.text = song.songName
+    cell.albumArtistLabel.text = song.songInformation()
     cell.coverImageView.sd_setImageWithURL(song.imageUrl, placeholderImage: nil)
+    cell.genreLabel.text = song.genreInformation()
+    cell.priceLabel.text = song.priceInformation()
 
     return cell
   }

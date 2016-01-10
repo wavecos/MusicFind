@@ -14,12 +14,23 @@ class Song {
   var artistName : String!
   var songName : String!
   var albumName : String!
+  var genre : String!
+  var albumPrice: String!
+  var currency: String!
   var imageUrl : NSURL!
   var previewUrl : NSURL!
   var realeaseDate : NSDate!
 
   func songInformation() -> String {
-    return "\(artistName) - \(albumName) - \(songName)"
+    return "\(artistName) - \(albumName)"
+  }
+
+  func priceInformation() -> String {
+    return "Precio: \(albumPrice) \(currency)"
+  }
+
+  func genreInformation() -> String {
+    return "Género: \(genre)"
   }
 
   class func songByJSON(json : JSON) -> Song {
@@ -27,6 +38,9 @@ class Song {
     song.artistName = json["artistName"].stringValue
     song.albumName = json["collectionName"].stringValue
     song.songName = json["trackName"].stringValue
+    song.genre = json["primaryGenreName"].stringValue
+    song.albumPrice = json["collectionPrice"].stringValue
+    song.currency = json["currency"].stringValue
     song.imageUrl = json["artworkUrl100"].URL
     song.previewUrl = json["previewUrl"].URL
 
