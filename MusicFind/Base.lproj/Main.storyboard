@@ -5,20 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="632" y="1106"/>
-        </scene>
         <!--MusicFind-->
         <scene sceneID="goM-tW-2N2">
             <objects>
@@ -33,10 +19,58 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="MusicFind" id="hKT-Rt-fdX"/>
+                    <connections>
+                        <segue destination="OPd-Z4-F9Z" kind="push" identifier="showSongSegue" id="Kv1-av-hgn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7i-3z-B4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="845" y="397"/>
+        </scene>
+        <!--Detail Song View Controller-->
+        <scene sceneID="YF9-oC-J7v">
+            <objects>
+                <viewController id="OPd-Z4-F9Z" customClass="DetailSongViewController" customModule="MusicFind" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hcb-Xa-kiP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mollis Pellentesque" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VW4-Pu-KOk" userLabel="artistLabel">
+                                <rect key="frame" x="20" y="88" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magna Cras Ligula Dapibus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h27-sz-qbF" userLabel="songLabel">
+                                <rect key="frame" x="20" y="338" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KWC-Nc-nsT" userLabel="coverImageView">
+                                <rect key="frame" x="60" y="123" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1bN-jO-dH7" userLabel="favoriteButton">
+                                <rect key="frame" x="126" y="455" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Favorito"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wo1-Rj-2Fx"/>
+                    <connections>
+                        <outlet property="artistLabel" destination="VW4-Pu-KOk" id="Fbh-9p-COZ"/>
+                        <outlet property="coverImageView" destination="KWC-Nc-nsT" id="gGk-vO-TSx"/>
+                        <outlet property="songLabel" destination="h27-sz-qbF" id="y7J-rC-8n4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fKF-IW-r42" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1349" y="397"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z4q-w0-bND">

@@ -85,11 +85,15 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-MusicFind/Alamofire.framework"
+  install_framework "Pods-MusicFind/Realm.framework"
+  install_framework "Pods-MusicFind/RealmSwift.framework"
   install_framework "Pods-MusicFind/SDWebImage.framework"
   install_framework "Pods-MusicFind/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-MusicFind/Alamofire.framework"
+  install_framework "Pods-MusicFind/Realm.framework"
+  install_framework "Pods-MusicFind/RealmSwift.framework"
   install_framework "Pods-MusicFind/SDWebImage.framework"
   install_framework "Pods-MusicFind/SwiftyJSON.framework"
 fi

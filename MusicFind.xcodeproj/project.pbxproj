@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04234B791C42BAA8006537E0 /* DetailSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04234B781C42BAA8006537E0 /* DetailSongViewController.swift */; };
 		0461CC071C4212C2002A7F70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461CC061C4212C2002A7F70 /* AppDelegate.swift */; };
 		0461CC0C1C4212C2002A7F70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0461CC0A1C4212C2002A7F70 /* Main.storyboard */; };
 		0461CC0E1C4212C2002A7F70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0461CC0D1C4212C2002A7F70 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04234B781C42BAA8006537E0 /* DetailSongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSongViewController.swift; sourceTree = "<group>"; };
 		0461CC031C4212C2002A7F70 /* MusicFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0461CC061C4212C2002A7F70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0461CC0B1C4212C2002A7F70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				04F061331C429EBE008A13CA /* ListSongViewController.swift */,
+				04234B781C42BAA8006537E0 /* DetailSongViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				04F061371C429FA7008A13CA /* SongCell.swift in Sources */,
 				04F061341C429EBE008A13CA /* ListSongViewController.swift in Sources */,
 				04F061301C429C41008A13CA /* Song.swift in Sources */,
+				04234B791C42BAA8006537E0 /* DetailSongViewController.swift in Sources */,
 				0461CC071C4212C2002A7F70 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
