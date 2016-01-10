@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import SDWebImage
 
 class ListSongViewController: UITableViewController {
 
@@ -15,6 +17,9 @@ class ListSongViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Configuraciones de UI
+    tableView.registerNib(UINib(nibName: "SongCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "SongCell")
 
     getSongs()
   }
@@ -28,11 +33,16 @@ class ListSongViewController: UITableViewController {
   // MARK: - Consumir el API para obtener las canciones
 
   func getSongs() {
-    Alamofire.request(.GET, "https://aaitunes.apple.com/search?term=beatles&entity=song&limit=20", parameters: nil)
+    Alamofire.request(.GET, "https://itunes.apple.com/search?term=beatles&entity=song&limit=20", parameters: nil)
       .responseJSON { response in
 
         if response.result.error == nil {
           debugPrint("respuesta server : \(response.result.value)")
+          let json = JSON(response.result.value!)
+          self.songs = Song.songsByJSON(json["results"])
+          debugPrint("canciones : \(self.songs)")
+
+          self.tableView.reloadData()
         } else {
           debugPrint("error : \(response.result.error)")
           self.showAlertMessage(response.result.error!.localizedDescription)
@@ -60,18 +70,15 @@ class ListSongViewController: UITableViewController {
     return songs.count
   }
 
-
-
-
-  /*
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-  let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCellWithIdentifier("SongCell", forIndexPath: indexPath) as! SongCell
 
-  // Configure the cell...
+    let song = self.songs[indexPath.row]
+    // Configure the cell...
+    cell.coverImageView.sd_setImageWithURL(song.imageUrl, placeholderImage: nil)
 
-  return cell
+    return cell
   }
-  */
 
   /*
   // Override to support conditional editing of the table view.
