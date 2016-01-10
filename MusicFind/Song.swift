@@ -12,6 +12,7 @@ import RealmSwift
 
 class Song : Object {
 
+  dynamic var trackId = ""
   dynamic var artistName = ""
   dynamic var songName = ""
   dynamic var albumName = ""
@@ -20,6 +21,10 @@ class Song : Object {
   dynamic var currency = ""
   dynamic var imageUrl = ""
   dynamic var previewUrl = ""
+
+  override static func primaryKey() -> String? {
+    return "trackId"
+  }
 
   func songInformation() -> String {
     return "\(artistName) - \(albumName)"

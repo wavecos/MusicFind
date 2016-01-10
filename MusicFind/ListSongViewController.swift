@@ -58,7 +58,6 @@ class ListSongViewController: UITableViewController {
     presentViewController(alert, animated: true, completion: nil)
   }
 
-
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
   }
