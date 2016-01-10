@@ -54,15 +54,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="icon-favorite-off"/>
+                                <connections>
+                                    <action selector="favoriteAction:" destination="OPd-Z4-F9Z" eventType="touchUpInside" id="t7R-PV-sNM"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KWC-Nc-nsT" userLabel="coverImageView">
                                 <rect key="frame" x="60" y="123" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" id="dQ2-SO-XEz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" id="dQ2-SO-XEz" userLabel="playButton">
                                 <rect key="frame" x="135" y="389" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icon-play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="OPd-Z4-F9Z" eventType="touchUpInside" id="Vn0-0T-GI7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
