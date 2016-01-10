@@ -27,8 +27,6 @@ class ListSongViewController: UITableViewController {
 
     // Configuraciones de UI
     tableView.registerNib(UINib(nibName: "SongCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "SongCell")
-
-    getSongs()
   }
 
   override func didReceiveMemoryWarning() {
@@ -39,11 +37,12 @@ class ListSongViewController: UITableViewController {
 
   // MARK: - Consumir el API para obtener las canciones
 
-  func getSongs() {
+  func getSongsForArtist(artist: String) {
+    let queryArtist = artist.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
 
     hud.showInView(self.view)
 
-    Alamofire.request(.GET, "https://itunes.apple.com/search?term=beatles&entity=song&limit=20", parameters: nil)
+    Alamofire.request(.GET, "https://itunes.apple.com/search?term=\(queryArtist!)&entity=song&limit=50", parameters: nil)
       .responseJSON { response in
 
         if response.result.error == nil {
@@ -66,6 +65,16 @@ class ListSongViewController: UITableViewController {
     let alert = UIAlertController(title: "MusicFing", message: message, preferredStyle: UIAlertControllerStyle.Alert)
     alert.addAction(UIAlertAction(title: "Joder !", style: UIAlertActionStyle.Cancel, handler: nil))
     presentViewController(alert, animated: true, completion: nil)
+  }
+
+  // Actions
+  @IBAction func searchAction(sender: AnyObject) {
+
+    if self.searchTextField.text != "" {
+      getSongsForArtist(self.searchTextField.text!)
+      self.searchTextField.resignFirstResponder()
+    }
+
   }
 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
