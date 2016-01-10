@@ -40,6 +40,7 @@ class Song : Object {
 
   class func songByJSON(json : JSON) -> Song {
     let song = Song()
+    song.trackId = json["trackId"].stringValue
     song.artistName = json["artistName"].stringValue
     song.albumName = json["collectionName"].stringValue
     song.songName = json["trackName"].stringValue

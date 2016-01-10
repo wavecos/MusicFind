@@ -12,6 +12,7 @@ import RealmSwift
 class FavoritesViewController: UITableViewController {
 
   var songs = [Song]()
+  var songSelected: Song?
 
   let realm = try! Realm()
 
@@ -57,6 +58,18 @@ class FavoritesViewController: UITableViewController {
     cell.priceLabel.text = song.priceInformation()
 
     return cell
+  }
+
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    self.songSelected = self.songs[indexPath.row]
+    self.performSegueWithIdentifier("showSongSegue", sender: nil)
+  }
+
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "showSongSegue" {
+      let detailSongVC = segue.destinationViewController as! DetailSongViewController
+      detailSongVC.song = self.songSelected
+    }
   }
   
 }

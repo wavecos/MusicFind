@@ -47,6 +47,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Favoritos" id="qOs-WK-mzQ"/>
+                    <connections>
+                        <segue destination="OPd-Z4-F9Z" kind="push" identifier="showSongSegue" id="nNJ-zy-i9t"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y3a-FU-VaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,4 +135,7 @@
         <image name="icon-favorite-off" width="24" height="24"/>
         <image name="icon-play" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nNJ-zy-i9t"/>
+    </inferredMetricsTieBreakers>
 </document>
