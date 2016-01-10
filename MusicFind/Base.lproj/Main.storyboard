@@ -18,7 +18,9 @@
                             <outlet property="delegate" destination="ipO-f4-zvk" id="Pp3-6l-IWC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MusicFind" id="hKT-Rt-fdX"/>
+                    <navigationItem key="navigationItem" title="MusicFind" id="hKT-Rt-fdX">
+                        <barButtonItem key="rightBarButtonItem" image="icon-favorite-off" id="2yv-YN-rVt"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="OPd-Z4-F9Z" kind="push" identifier="showSongSegue" id="Kv1-av-hgn"/>
                     </connections>

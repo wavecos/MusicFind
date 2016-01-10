@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import AVFoundation
+import JGProgressHUD
 
 class DetailSongViewController: UIViewController {
 
@@ -19,6 +20,8 @@ class DetailSongViewController: UIViewController {
 
   var song: Song?
   var audioPlayer : AVAudioPlayer?
+
+  let hud = JGProgressHUD(style: .Dark)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,25 +44,28 @@ class DetailSongViewController: UIViewController {
   @IBAction func playAction(sender: AnyObject) {
 
     if let song = song {
+      self.hud.showInView(self.view)
+
       let previewUrl = NSURL(string: song.previewUrl)
       let songData = NSData(contentsOfURL: previewUrl!)
 
       self.audioPlayer = try! AVAudioPlayer(data: songData!)
 
+
       if let audioPlayer = self.audioPlayer {
         audioPlayer.numberOfLoops = 0
-
         audioPlayer.volume = 1
-
         audioPlayer.prepareToPlay()
         
         audioPlayer.play()
       }
+      self.hud.dismiss()
     }
   }
 
 
   @IBAction func favoriteAction(sender: AnyObject) {
+    debugPrint("boton favorito presionado")
   }
 
 
