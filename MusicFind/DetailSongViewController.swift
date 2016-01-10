@@ -24,7 +24,8 @@ class DetailSongViewController: UIViewController {
     if let song = song {
       artistLabel.text = song.artistName
       songLabel.text = song.songName
-      coverImageView.sd_setImageWithURL(song.imageUrl, placeholderImage: nil)
+      let imageUrl = NSURL(string: song.imageUrl)
+      coverImageView.sd_setImageWithURL(imageUrl, placeholderImage: nil)
     }
   }
 

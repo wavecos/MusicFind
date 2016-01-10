@@ -8,18 +8,18 @@
 
 import Foundation
 import SwiftyJSON
+import RealmSwift
 
-class Song {
+class Song : Object {
 
-  var artistName : String!
-  var songName : String!
-  var albumName : String!
-  var genre : String!
-  var albumPrice: String!
-  var currency: String!
-  var imageUrl : NSURL!
-  var previewUrl : NSURL!
-  var realeaseDate : NSDate!
+  dynamic var artistName = ""
+  dynamic var songName = ""
+  dynamic var albumName = ""
+  dynamic var genre = ""
+  dynamic var albumPrice = ""
+  dynamic var currency = ""
+  dynamic var imageUrl = ""
+  dynamic var previewUrl = ""
 
   func songInformation() -> String {
     return "\(artistName) - \(albumName)"
@@ -41,8 +41,8 @@ class Song {
     song.genre = json["primaryGenreName"].stringValue
     song.albumPrice = json["collectionPrice"].stringValue
     song.currency = json["currency"].stringValue
-    song.imageUrl = json["artworkUrl100"].URL
-    song.previewUrl = json["previewUrl"].URL
+    song.imageUrl = json["artworkUrl100"].stringValue
+    song.previewUrl = json["previewUrl"].stringValue
 
     return song
   }
